@@ -1,0 +1,51 @@
+
+
+### Base URL
+@baseUrl = http://localhost:5074/api/users
+
+### 1. GET — Récupérer tous les utilisateurs
+GET {{baseUrl}}
+Accept: application/json
+Authorization: SecretToken
+
+###
+
+### 2. GET — Récupérer un utilisateur par ID
+@userId = 1
+GET {{baseUrl}}/{{userId}}
+Accept: application/json
+ 
+
+###
+
+### 3. POST — Créer un nouvel utilisateur
+POST {{baseUrl}}
+Content-Type: application/json
+Authorization: SecretToken
+
+{ 
+  "email": "john.doe@example.com"
+}
+
+###
+
+### 4. PUT — Mettre à jour un utilisateur
+ @userId = 1
+PUT {{baseUrl}}/{{userId}}
+Content-Type: application/json
+Authorization: SecretToken
+
+{
+  "id": {{userId}},
+  "name": "John Doe Updated",
+  "email": "john.updated@example.com"
+}
+
+###
+
+### 5. DELETE — Supprimer un utilisateur
+ 
+DELETE {{baseUrl}}/{{userId}}
+Accept: application/json
+Authorization: SecretToken
+ 
